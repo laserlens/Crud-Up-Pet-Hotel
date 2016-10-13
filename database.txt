@@ -1,0 +1,36 @@
+
+-- Create Tables --
+
+CREATE TABLE owners (
+  id SERIAL PRIMARY KEY,
+  first_name varchar(80),
+  last_name varchar(80)
+);
+
+CREATE TABLE pets (
+  id SERIAL PRIMARY KEY,
+  pet_name varchar(120),
+  animal_type varchar(80),
+  color varchar(80),
+  owners_id int REFERENCES owners
+);
+
+CREATE TABLE visits (
+  id SERIAL PRIMARY KEY,
+  check_in date,
+  check_out date,
+  pets_id int REFERENCES pets
+);
+
+-- Data Entry --
+
+INSERT INTO owners (first_name, last_name)
+VALUES
+('Jeff', 'Miller'),
+('Matt', 'Eng');
+
+INSERT INTO pets (pet_name, animal_type, color, owners_id)
+VALUES
+('Princess', 'alligator', 'green', 1),
+('Clucker The Destroyer', 'chicken', 'black', 1),
+('Tom', 'Wookie', 'brown', 2);
