@@ -1,4 +1,9 @@
 
+-- Create Database --
+
+CREATE DATABASE PetHotel;
+
+
 -- Create Tables --
 
 CREATE TABLE owners (
@@ -21,6 +26,7 @@ CREATE TABLE visits (
   check_out date,
   pets_id int REFERENCES pets
 );
+
 
 -- Data Entry --
 
