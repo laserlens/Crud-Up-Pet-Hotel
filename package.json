@@ -1,0 +1,24 @@
+{
+  "name": "group_sql_challenge",
+  "version": "1.0.0",
+  "description": "crud up pet hotel group project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachgarman/Crud-Up-Pet-Hotel.git"
+  },
+  "author": "Adrian Flak, Vaughn Prosser, Zach Garman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zachgarman/Crud-Up-Pet-Hotel/issues"
+  },
+  "homepage": "https://github.com/zachgarman/Crud-Up-Pet-Hotel#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "pg": "^6.1.0"
+  }
+}
