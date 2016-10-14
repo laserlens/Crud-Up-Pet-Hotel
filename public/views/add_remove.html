@@ -13,8 +13,26 @@
   <body>
     <main class="text-center">
       <div class="text-left" id="Owners"></div>
-      <h1 class="text-longshadow">Add or Remove a Pet</h1>
-      <div class="dynamic"></div>
+      <h1>Add or Remove a Pet</h1>
+      <div class="container well">
+        <form class="text-right">
+          <p>
+            <label for="pet_name">Pet's Name:</label>
+            <input type="text" name="pet_name" id="pet_name">
+          </p>
+          <p>
+            <label for="color">Pet's Color</label>
+            <input type="text" name="color" id="color">
+          </p>
+          <p>
+            <label for="animal_type">Type of Pet</label>
+            <input type="text" name="animal_type" id="animal_type">
+          </p>
+          <p>
+            <input type="submit" class="text-center btn-default" name="submit" value="Submit">
+          </p>
+        </div>
+      </form>
     </main>
   </body>
 </html>
