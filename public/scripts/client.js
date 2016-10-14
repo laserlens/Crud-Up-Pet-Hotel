@@ -1,10 +1,30 @@
 $(function() {
   // listeners
-
-  $('.newUser').on('click', newUserPage)
-
+  $('.user').on('submit', addNewUser);
 });
 
-function newUserPage() {
-  
+function addNewUser(event) {
+  event.preventDefault();
+  var user = $('.user').serialize();
+  submitUser(user);
+}
+
+function submitUser(person) {
+
+  $.AJAX({
+    type: 'POST',
+    url: '/newUser',
+    data: person,
+    success: addRemove
+  });
+}
+
+function addRemove() {
+  $.AJAX({
+    type: 'GET',
+    url: '/addRemove'
+    success: function() {
+      console.log('moved to addRemove');
+    }
+  });
 }
