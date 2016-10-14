@@ -5,6 +5,7 @@ var config = {
   database: 'pethotel',
 };
 
+
 var pool = new pg.Pool(config);
 // router.get('/view', function (req, res) {
 //   res.sendFile(path.join(__dirname, './public/views/checkin_checkout.html'));
