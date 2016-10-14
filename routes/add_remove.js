@@ -18,7 +18,7 @@ router.get('/pets', function (req, res) {
         return;
       }
 
-      client.query('SELECT owners.id AS ownerID, first_name, last_name, pets.id AS petsid, pet_name animal_type, color, owner_id FROM owners JOIN pets ON owners.id = pets.owner_id GROUP BY owners.id, pets.id, first_name, last_name returnig *;', function (err, result) {
+      client.query('SELECT owners.id AS ownerID, first_name, last_name, pets.id AS petsid, pet_name animal_type, color, owner_id FROM owners LEFT JOIN pets ON owners.id = pets.owner_id GROUP BY owners.id, pets.id, first_name, last_name returnig *;', function (err, result) {
         if (err) {
           console.log('Error querying DB', err);
           res.sendStatus(500);
