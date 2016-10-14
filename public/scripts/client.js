@@ -6,12 +6,13 @@ $(function() {
 function addNewUser(event) {
   event.preventDefault();
   var user = $('.user').serialize();
+  console.log(user);
   submitUser(user);
 }
 
 function submitUser(person) {
 
-  $.AJAX({
+  $.ajax({
     type: 'POST',
     url: '/newUser',
     data: person,
@@ -20,9 +21,9 @@ function submitUser(person) {
 }
 
 function addRemove() {
-  $.AJAX({
+  $.ajax({
     type: 'GET',
-    url: '/addRemove'
+    url: '/addRemove',
     success: function() {
       console.log('moved to addRemove');
     }
