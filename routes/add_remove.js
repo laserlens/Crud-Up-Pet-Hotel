@@ -2,12 +2,15 @@ var router = require('express').Router();
 var pg = require('pg');
 
 var config = {
-  database: 'PetHotel',
-};
+  database: 'pethotel'
+}
 
-router.get('/view', function (req, res) {
-  res.sendFile(path.join(__dirname, './public/views/add_remove.html'));
-});
+var pool = new pg.Pool(config);
+
+//
+// router.get('/view', function (req, res) {
+//   res.sendFile(path.join(__dirname, './public/views/add_remove.html'));
+// });
 
 router.get('/pets', function (req, res) {
   pool.connect(function (err, client, done) {
