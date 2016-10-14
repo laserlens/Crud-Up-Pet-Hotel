@@ -4,7 +4,8 @@ var pg = require('pg');
 var config = {
   database: 'PetHotel',
 };
-
+var ownerArray = [];
+var petsArray = [];
 router.get('/view', function (req, res) {
   res.sendFile(path.join(__dirname, './public/views/add_remove.html'));
 });
@@ -43,7 +44,7 @@ router.post('/', function (req, res) {
         return;
       }
 
-      client.query('INSERT INTO pets (pet_name, animal_type, color, owner_id) VALUES ($1, $2, $3, $4)'),
+      client.query('INSERT INTO pets (pet_name, animal_type, color, owner_id) VALUES ($1, $2, $3, $4)',
                   [req.body.petName, req.body.animalType, req.body.color, req.body.ownerID],
                   function (err, result) {
         if (err) {
@@ -53,7 +54,7 @@ router.post('/', function (req, res) {
         }
 
         res.sendStatus(200);
-      };
+      });
     } finally {
       done();
     }
@@ -110,5 +111,6 @@ router.delete('/', function (req, res) {
                   done();
                 });
   });
+});
 
 module.exports = router;
