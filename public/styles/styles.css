@@ -1,3 +1,9 @@
+button:focus {
+  outline: 0;
+}
+input:focus {
+  outline: 0;
+}
 h1 {
   color: navy;
   font-size: 8rem;
@@ -17,4 +23,9 @@ h1 {
                 0 5px 10px rgba(0,0,0,.25),
                 0 10px 10px rgba(0,0,0,.2),
                 0 20px 20px rgba(0,0,0,.15);
+}
+.addFormDiv{
+  width: 24em;
+  border: solid;
+  padding: 2em;
 }
