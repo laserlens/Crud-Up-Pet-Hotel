@@ -2,12 +2,14 @@ var router = require('express').Router();
 var pg = require('pg');
 
 var config = {
-  database: 'PetHotel'
+  database: 'pethotel'
 }
 
-router.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, './public/views/new_user.html'));
-});
+var pool = new pg.Pool(config);
+
+// router.get('/', function(req, res) {
+//   res.sendFile(path.join(__dirname, './public/views/new_user.html'));
+// });
 
 router.post('/', function(req, res) {
   pool.connect(function(err, client, done) {
