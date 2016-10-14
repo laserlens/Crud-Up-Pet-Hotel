@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(function() {
   // listeners
   $('.user').on('submit', addNewUser);
