@@ -20,7 +20,7 @@ router.get('/visits', function (req, res) {
         return;
       }
 
-      client.query('SELECT owners.id AS ownerID, first_name, last_name, pets.id AS pets_id, pet_name, animal_type, color, owner_id, visits.id AS visitsid, check_in, check_out, pet_id FROM owners LEFT JOIN pets ON owners.id = pets.owner_id LEFT JOIN visits ON pets.id = visits.pet_id GROUP BY owners.id, pets.id, first_name, last_name, visits.id;', function (err, result) {
+      client.query('SELECT owners.id AS ownerID, first_name, last_name, pets.id AS pets_id, pet_name, animal_type, color, owner_id, visits.id AS visit_id, check_in, check_out, pet_id FROM owners LEFT JOIN pets ON owners.id = pets.owner_id LEFT JOIN visits ON pets.id = visits.pet_id GROUP BY owners.id, pets.id, first_name, last_name, visits.id;', function (err, result) {
         if (err) {
           console.log('Error querying DB', err);
           res.sendStatus(500);
@@ -39,14 +39,15 @@ router.get('/visits', function (req, res) {
 router.post('/', function (req, res) {
   pool.connect(function (err, client, done) {
     try {
+      console.log('Req.body: ', req.body);
       if (err) {
         console.log('Error connecting to DB', err);
         res.sendStatus(500);
         return;
       }
 
-      client.query('INSERT INTO visits (check_in, check_out, pet_id) VALUES ($1, $2, $3)',
-                  [req.body.checkIn, req.body.checkOut, req.body.petId],
+      client.query('INSERT INTO visits (check_in, check_out, pet_id) VALUES ($1, null, $2)',
+                  [req.body.checkIn, req.body.pet_id],
                   function (err, result) {
         if (err) {
           console.log('Error querying DB', err);
@@ -73,7 +74,7 @@ router.put('/', function (req, res) {
       }
 
       client.query('UPDATE visits SET check_in=$2, check_out=$3, pet_id=$4 WHERE id=$1;',
-                  [req.body.id, req.body.checkIn, req.body.checkOut, req.body.petId],
+                  [req.body.id, req.body.checkIn, req.body.checkOut, req.body.pet_id],
                   function (err, result) {
         if (err) {
           console.log('Error querying DB', err);
