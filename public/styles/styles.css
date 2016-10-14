@@ -38,7 +38,7 @@
 $bg: #e74c3c;
 
 body{
-  background: $bg;
+  background: #e74c3c;
 }
 
 .text-longshadow{
@@ -48,5 +48,5 @@ body{
   font-family: lato;
   font-weight: 900;
   text-align: center;
-  @include text-shadow(longshadow(darken($bg,30%),$bg,50, 0.5));
+  @include text-shadow(longshadow(darken(#e74c3c,30%),#e74c3c,50, 0.5));
 }
