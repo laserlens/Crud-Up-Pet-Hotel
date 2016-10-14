@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var router = require('express').Router();
 var pg = require('pg');
 
@@ -20,7 +19,7 @@ router.get('/pets', function (req, res) {
         return;
       }
 
-      client.query('SELECT * FROM owners JOIN pets ON owners.id = pets.owner_id GROUP BY owners.id, pets.id, first_name, last_name returnig *;', function (err, result) {
+      client.query('SELECT owners.id AS ownerID, first_name, last_name, pets.id AS pets_id, pet_name animal_type, color, owner_id FROM owners JOIN pets ON owners.id = pets.owner_id GROUP BY owners.id, pets.id, first_name, last_name returnig *;', function (err, result) {
         if (err) {
           console.log('Error querying DB', err);
           res.sendStatus(500);
@@ -115,5 +114,3 @@ router.delete('/', function (req, res) {
 });
 
 module.exports = router;
-=======
->>>>>>> 7876d59a36621a5170a4ce6bbd0837aac9e1ed8a
