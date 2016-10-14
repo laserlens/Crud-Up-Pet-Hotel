@@ -1,6 +1,7 @@
 $(function() {
   getOwnersNames();
   $('#owners_menu').on('change', getPets);
+  $('#pets_menu').on('change', displayPetInfo);
 });
 
 function getOwnersNames () {
@@ -21,6 +22,7 @@ function displayOwners(response) {
 
 function getPets() {
   var $ownerid = $(this).find(':selected').attr('value');
+    appendPetDisplay('', '', '');
   $.ajax({
     type: 'POST',
     url: '/add_remove/pets',
@@ -35,7 +37,21 @@ function displayPets(response) {
   response.forEach(function(pet) {
     var name = pet.pet_name;
     var id = pet.owners_id;
-    var $option = $('<option value="' + id + '">' + name + '</value>');
+    var $option = $('<option value="' + id + '">' + name + '</value>').data(pet);
     $('#pets_menu').append($option);
   });
+}
+
+function displayPetInfo() {
+  var petObj = $(this).find(':selected').data();
+  var name = petObj.pet_name;
+  var type = petObj.animal_type;
+  var color = petObj.color;
+  appendPetDisplay(name, type, color);
+}
+
+function appendPetDisplay (name, type, color) {
+  $('#pet_name').val(name);
+  $('#animal_type').val(type);
+  $('#color').val(color);
 }
