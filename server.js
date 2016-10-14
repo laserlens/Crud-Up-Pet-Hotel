@@ -13,7 +13,7 @@ app.use(express.static('public'));
 
 // routes running
 app.use('/newUser', newUser);
-app.use('/add_remove', addRemove);
+//app.use('/add_remove', addRemove);
 // app.use('/checkin_checkout', checkinCheckout);
 
 

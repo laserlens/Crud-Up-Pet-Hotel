@@ -1,3 +1,6 @@
+button {
+  padding: 2em;
+}
 button:focus {
   outline: 0;
 }
@@ -10,7 +13,6 @@ h1 {
   line-height: 8rem;
   font-family: lato;
   font-weight: 900;
-  text-align: center;
   text-shadow: 0 1px 0 #ccc,
                 0 2px 0 #c9c9c9 ,
                 0 3px 0 #bbb,
@@ -24,8 +26,18 @@ h1 {
                 0 10px 10px rgba(0,0,0,.2),
                 0 20px 20px rgba(0,0,0,.15);
 }
+.addPetButton{
+  margin-left: 30em;
+}
 .addFormDiv{
+  margin-right: 12em;
   width: 24em;
   border: solid;
   padding: 2em;
+}
+.pushMeDown{
+  margin-top: 12em;
+}
+.petInfoButton{
+  margin-left: 6em;
 }
