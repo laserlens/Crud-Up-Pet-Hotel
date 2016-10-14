@@ -11,6 +11,28 @@ var pool = new pg.Pool(config);
 // router.get('/view', function (req, res) {
 //   res.sendFile(path.join(__dirname, './public/views/add_remove.html'));
 // });
+router.get('/owners', function (req, res) {
+  pool.connect(function (err, client, done) {
+    try {
+      if (err) {
+        console.log('Error connecting to DB', err);
+        res.sendStatus(500);
+        return;
+      }
+
+      client.query('SELECT * FROM owners;', function (err, result) {
+        if (err) {
+          console.log('Error querying DB', err);
+          res.sendStatus(500);
+          return;
+        }
+        res.send(result.rows);
+      });
+    } finally {
+      done();
+    }
+  });
+});
 
 router.get('/pets', function (req, res) {
   pool.connect(function (err, client, done) {

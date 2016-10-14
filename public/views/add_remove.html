@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <script src="/assets/vendors/jquery.min.js"></script>
     <script src="/scripts/client.js"></script>
+    <script src="/scripts/pop_owners.js"></script>
 
     <link rel="stylesheet" href="/assets/vendors/bootstrap.min.css" />
     <link rel="stylesheet" href="/styles/styles.css" />
@@ -12,8 +13,14 @@
   </head>
   <body>
     <main>
-      <div class="text-left" id="Owners"></div>
       <h1 class="text-center">Add or Remove a Pet</h1>
+
+      <div class="text-left" id="Owners">
+        <select id="owners_menu">
+          <option value="Owner's Name"></option>
+        </select>
+      </div>
+
       <div class="container well addFormDiv">
         <form class="addPet">
           <p>
