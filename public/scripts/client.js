@@ -35,4 +35,7 @@ function submitPet(pet) {
   });
 }
 
-alert('Your pet was added');
+function petAdded() {
+  alert('Your pet was added');
+  $('.addPet').val('');
+}
