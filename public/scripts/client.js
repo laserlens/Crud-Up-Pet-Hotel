@@ -10,21 +10,10 @@ function addNewUser(event) {
 }
 
 function submitUser(person) {
-
-  $.AJAX({
+  $.ajax({
     type: 'POST',
     url: '/newUser',
     data: person,
-    success: addRemove
-  });
-}
-
-function addRemove() {
-  $.AJAX({
-    type: 'GET',
-    url: '/addRemove'
-    success: function() {
-      console.log('moved to addRemove');
-    }
+    success: window.location.href = '/views/add_remove.html'
   });
 }

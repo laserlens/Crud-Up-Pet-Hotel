@@ -2,8 +2,10 @@ var router = require('express').Router();
 var pg = require('pg');
 
 var config = {
-  database: 'PetHotel'
+  database: 'pethotel'
 }
+
+var pool = new pg.Pool(config);
 
 router.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, './public/views/new_user.html'));
@@ -19,7 +21,7 @@ router.post('/', function(req, res) {
       }
 
       client.query('INSERT INTO owners (first_name, last_name) VALUES ($1, $2)',
-                  [req.body.firstName, req.body.lastName],
+                  [req.body.first_name, req.body.last_name],
                   function(err, result) {
         if (err) {
           console.log('Error querying DB', err);
