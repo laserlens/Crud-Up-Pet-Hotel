@@ -4,9 +4,8 @@ var pg = require('pg');
 var config = {
   database: 'pethotel',
 };
-
-
 var pool = new pg.Pool(config);
+
 // router.get('/view', function (req, res) {
 //   res.sendFile(path.join(__dirname, './public/views/checkin_checkout.html'));
 // });
@@ -21,7 +20,7 @@ router.get('/visits', function (req, res) {
         return;
       }
 
-      client.query('SELECT owners.id AS ownerID, first_name, last_name, pets.id AS pets_id, pet_name animal_type, color, owner_id, visits.id AS visitsid, check_in, check_out, pet_id FROM owners LEFT JOIN pets ON owners.id = pets.owner_id LEFT JOIN visits ON pets.id = visits.pet_id GROUP BY owners.id, pets.id, first_name, last_name, visits.id returnig *;', function (err, result) {
+      client.query('SELECT owners.id AS ownerID, first_name, last_name, pets.id AS pets_id, pet_name animal_type, color, owner_id, visits.id AS visitsid, check_in, check_out, pet_id FROM owners LEFT JOIN pets ON owners.id = pets.owner_id LEFT JOIN visits ON pets.id = visits.pet_id GROUP BY owners.id, pets.id, first_name, last_name, visits.id;', function (err, result) {
         if (err) {
           console.log('Error querying DB', err);
           res.sendStatus(500);
