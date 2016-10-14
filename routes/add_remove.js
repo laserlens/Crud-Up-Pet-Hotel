@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var router = require('express').Router();
 var pg = require('pg');
 
@@ -114,3 +115,5 @@ router.delete('/', function (req, res) {
 });
 
 module.exports = router;
+=======
+>>>>>>> 7876d59a36621a5170a4ce6bbd0837aac9e1ed8a
