@@ -1,5 +1,5 @@
-button {
-  padding: 2em;
+button{
+  margin: 1em 1em 1em 1em;
 }
 button:focus {
   outline: 0;
