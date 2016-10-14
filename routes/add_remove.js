@@ -4,8 +4,7 @@ var pg = require('pg');
 var config = {
   database: 'PetHotel',
 };
-var ownerArray = [];
-var petsArray = [];
+
 router.get('/view', function (req, res) {
   res.sendFile(path.join(__dirname, './public/views/add_remove.html'));
 });
@@ -26,7 +25,7 @@ router.get('/pets', function (req, res) {
           return;
         }
 
-        res.send(result);
+        res.send(result.rows);
         res.sendStatus(200);
       });
     } finally {
