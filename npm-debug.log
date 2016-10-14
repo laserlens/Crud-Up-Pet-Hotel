@@ -1,15 +1,15 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/Cellar/node/6.6.0/bin/node',
+1 verbose cli [ '/usr/local/Cellar/node/6.8.0/bin/node',
 1 verbose cli   '/usr/local/bin/npm',
 1 verbose cli   'start' ]
-2 info using npm@3.10.7
-3 info using node@v6.6.0
+2 info using npm@3.10.8
+3 info using node@v6.8.0
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info lifecycle group_sql_challenge@1.0.0~prestart: group_sql_challenge@1.0.0
 6 silly lifecycle group_sql_challenge@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle group_sql_challenge@1.0.0~start: group_sql_challenge@1.0.0
 8 verbose lifecycle group_sql_challenge@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle group_sql_challenge@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/zachgarman/Documents/Prime/Prime_projects/group_sql_challenge/node_modules/.bin:/usr/local/Cellar/node/6.6.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+9 verbose lifecycle group_sql_challenge@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/zachgarman/Documents/Prime/Prime_projects/group_sql_challenge/node_modules/.bin:/usr/local/Cellar/node/6.8.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 10 verbose lifecycle group_sql_challenge@1.0.0~start: CWD: /Users/zachgarman/Documents/Prime/Prime_projects/group_sql_challenge
 11 silly lifecycle group_sql_challenge@1.0.0~start: Args: [ '-c', 'node server.js' ]
 12 silly lifecycle group_sql_challenge@1.0.0~start: Returned: code: 1  signal: null
@@ -27,9 +27,9 @@
 15 verbose pkgid group_sql_challenge@1.0.0
 16 verbose cwd /Users/zachgarman/Documents/Prime/Prime_projects/group_sql_challenge
 17 error Darwin 15.6.0
-18 error argv "/usr/local/Cellar/node/6.6.0/bin/node" "/usr/local/bin/npm" "start"
-19 error node v6.6.0
-20 error npm  v3.10.7
+18 error argv "/usr/local/Cellar/node/6.8.0/bin/node" "/usr/local/bin/npm" "start"
+19 error node v6.8.0
+20 error npm  v3.10.8
 21 error code ELIFECYCLE
 22 error group_sql_challenge@1.0.0 start: `node server.js`
 22 error Exit status 1

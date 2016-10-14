@@ -1,13 +1,15 @@
 var router = require('express').Router();
 var pg = require('pg');
+// var path = require('path');
 
 var config = {
   database: 'PetHotel',
 };
 
-router.get('/view', function (req, res) {
-  res.sendFile(path.join(__dirname, './public/views/add_remove.html'));
-});
+// router.get('/view', function (req, res) {
+//   console.log('Got here, at least');
+//   res.sendFile(path.join(__dirname, '../public/views/add_remove.html'));
+// });
 
 router.get('/pets', function (req, res) {
   pool.connect(function (err, client, done) {
